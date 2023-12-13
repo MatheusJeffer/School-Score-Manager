@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Debug": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Mathe_ss6lb0m\\source\\repos\\Gerenciador de notas de alunos\\bin\\Debug\\net8.0-windows10.0.22621.0\\Gerenciador de notas de alunos.exe",
+      "nativeDebugging": false,
+      "remoteDebugEnabled": true
+    }
+  }
+}
