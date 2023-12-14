@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gerenciador_de_notas_de_alunos.DATA
+namespace Score_Manager.Data
 {
     public class ProgramData
     {
@@ -12,6 +12,7 @@ namespace Gerenciador_de_notas_de_alunos.DATA
         public static List<string> StudentNameArray = new List<string> { };
         public static double StudentScoreSum = 0;
         public static int NumberStudent = 0;
+        public static double maxScore = 0;
         public static int StudentRegister = 0;
         public static string[] courses = [];
         public static int quantityCourses;

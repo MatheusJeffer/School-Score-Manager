@@ -1,8 +1,8 @@
-﻿using Gerenciador_de_notas_de_alunos.DATA;
+﻿using Score_Manager.Data;
 using System;
 using System.Collections.Generic;
 
-namespace Gerenciador_de_notas_de_alunos.Functions
+namespace Score_Manager.Functions
 {
     public class ShowStudents
     {
@@ -10,20 +10,21 @@ namespace Gerenciador_de_notas_de_alunos.Functions
         {
             int index = 0;
 
-            for(int Student = 0; Student < ProgramData.StudentNameArray.Count; Student++)
+            for(int student = 0; student < ProgramData.StudentNameArray.Count; student++)
             {
                 index = 0;
-                Console.WriteLine($"{Student}°.{ProgramData.StudentNameArray[Student]}: ");
+                Console.WriteLine($"{student}°.{ProgramData.StudentNameArray[student]}: ");
 
                 for (int course = 0; course < ProgramData.quantityCourses; course++)
-                    foreach ( var scr in ProgramData.allScores[Student][course])
+                {
+                    for (int cicle = 0; cicle < ProgramData.cicleQuantity; cicle++)
                     {
-    
-                        Console.WriteLine($"  {ProgramData.courses[index]}: [ {scr:f1} ] ");
-                        index++;
-                    }
 
-                Console.WriteLine(" ");
+                        Console.WriteLine($"  {ProgramData.courses[index]}: [ {ProgramData.allScores[student][course][cicle]:f2} ] ");
+                    }
+                    index++;
+                }
+
             }
         }
     }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gerenciador_de_notas_de_alunos.InputValidators
+namespace Score_Manager.InputValidators
 {
     public static class ByteInputValidator
     {
-        public static byte ByteInput(string text)
+        public static byte ByteInput(string text, int minNumber, int maxNumber)
             
         {
             byte ByteNumber;
@@ -20,7 +20,7 @@ namespace Gerenciador_de_notas_de_alunos.InputValidators
                 {
 
                     ByteNumber = Convert.ToByte(Console.ReadLine());
-                    if (ByteNumber <= 100)
+                    if ( ByteNumber > minNumber && ByteNumber <= maxNumber)
                     {
                         break;
 

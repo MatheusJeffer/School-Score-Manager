@@ -1,11 +1,11 @@
-﻿using Gerenciador_de_notas_de_alunos.InputValidators;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Score_Manager.InputValidators;
 
-namespace Gerenciador_de_notas_de_alunos.DATA
+namespace Score_Manager.Data
 {
     public class ResetConfigProgram : ProgramData
     {
@@ -18,7 +18,7 @@ namespace Gerenciador_de_notas_de_alunos.DATA
             switch (typeConfig)
             {
                 case 1:
-                    courseQuantity = ByteInputValidator.ByteInput("Write numbers of course: ");
+                    courseQuantity = ByteInputValidator.ByteInput("Write numbers of course: ", 0, 15);
                     quantityCourses = courseQuantity;
                     courses = new string[courseQuantity];
                     allScores.Clear();
@@ -32,7 +32,7 @@ namespace Gerenciador_de_notas_de_alunos.DATA
 
                     break;
                 case 2:
-                    cicleAll = ByteInputValidator.ByteInput("Write quantity f cicles: ");
+                    cicleAll = ByteInputValidator.ByteInput("Write quantity f cicles: ", 0, 4);
                     cicleQuantity = cicleAll;
                     break;
                 case 3:

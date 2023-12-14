@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Gerenciador_de_notas_de_alunos.InputValidators
+namespace Score_Manager.InputValidators
 {
     public static class DoubleInputValidator
     {
@@ -17,7 +17,7 @@ namespace Gerenciador_de_notas_de_alunos.InputValidators
                 try
                 {
                     DoubleInput = Convert.ToDouble(Console.ReadLine());
-                    if (DoubleInput <= MaxScr && DoubleInput > minScr)
+                    if (DoubleInput <= MaxScr && DoubleInput >= minScr)
                     {
                         break;
                     }

@@ -1,12 +1,12 @@
-﻿using Gerenciador_de_notas_de_alunos.DATA;
-using Gerenciador_de_notas_de_alunos.InputValidators;
+﻿using Score_Manager.Data;
+using Score_Manager.InputValidators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gerenciador_de_notas_de_alunos.ScoreType
+namespace Score_Manager.ScoreType
 {
     public  class ScrManegerBrazilStyle
     {
@@ -18,7 +18,7 @@ namespace Gerenciador_de_notas_de_alunos.ScoreType
             double sumScoreMed = 0;
             double finalScore = 0;
 
-                   score = DoubleInputValidator.GetDouble($"Write score of for {ProgramData.courses[arrayVal]} student: ", 10.5,   0);
+            score = DoubleInputValidator.GetDouble($"Write score of for {ProgramData.courses[arrayVal]} student: ", 10.5, 0);
 
             return score;
         }

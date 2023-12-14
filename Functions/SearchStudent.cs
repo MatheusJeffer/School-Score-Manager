@@ -1,11 +1,14 @@
-﻿using Gerenciador_de_notas_de_alunos.DATA;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Score_Manager.Data;
+using Score_Manager.InputValidators;
 
-namespace Gerenciador_de_notas_de_alunos.Functions
+
+
+namespace Score_Manager.Functions
 {
     public class SearchStudent
     {

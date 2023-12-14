@@ -1,8 +1,8 @@
 ﻿using System;
-using Gerenciador_de_notas_de_alunos.DATA;
-using Gerenciador_de_notas_de_alunos.InputValidators;
+using Score_Manager.Data;
+using Score_Manager.InputValidators;
 
-namespace Gerenciador_de_notas_de_alunos.Functions
+namespace Score_Manager.Functions
 {
     public class StudentSignin : ProgramData
     {
@@ -18,9 +18,11 @@ namespace Gerenciador_de_notas_de_alunos.Functions
                 for (int course = 0; course < quantityCourses; course++)
                 {
                     allScores[NumberStudent].Add(new List<double> { });
-                    allScores[NumberStudent][course].Add(TypeCalculatorScr.TypeScr(country, course));
+                    for (int _ = 0; _ < cicleQuantity; _++)
+                    {
+                        allScores[NumberStudent][course].Add(0);
 
-
+                    }
 
                 }
                 NumberStudent++;

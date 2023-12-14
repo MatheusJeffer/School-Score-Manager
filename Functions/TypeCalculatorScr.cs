@@ -1,11 +1,11 @@
-﻿using Gerenciador_de_notas_de_alunos.ScoreType;
+﻿using Score_Manager.ScoreType;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gerenciador_de_notas_de_alunos.Functions
+namespace Score_Manager.Functions
 {
     public static class TypeCalculatorScr
     {

@@ -4,24 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gerenciador_de_notas_de_alunos
+namespace Score_Manager.InputValidators
 {
     public static class StringValidator
     {
         public static string StringInputValidator(string text)
         {
-            
+
             string StringInput;
             int SymbolsQuantity;
             char[] Allsymbols = { '!', '@', '#', '^',  '(', ')', '*', '?', '%', '&',
             '_',  '{', '}', '[', ']', ':', ';', ',', '"',  '.', '\\', '\''
-            , '.', '|'}; 
+            , '.', '|'};
             while (true)
             {
                 SymbolsQuantity = 0;
 
                 Console.Write(text);
-                StringInput = Console.ReadLine().TrimStart(); 
+                StringInput = Console.ReadLine().TrimStart();
 
                 for (int i = 0; i < StringInput.Length; i++)
                 {
@@ -40,7 +40,7 @@ namespace Gerenciador_de_notas_de_alunos
                 {
                     Console.WriteLine("Write only letters.");
                 }
-                else if( SymbolsQuantity > 0 || StringInput.Any(char.IsSymbol))
+                else if (SymbolsQuantity > 0 || StringInput.Any(char.IsSymbol))
                 {
                     Console.WriteLine("Write only letters.");
                 }
@@ -51,7 +51,7 @@ namespace Gerenciador_de_notas_de_alunos
             }
 
             return StringInput;
-        } 
+        }
 
     }
 }

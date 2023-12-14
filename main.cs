@@ -1,16 +1,17 @@
 ﻿using System;
-using Gerenciador_de_notas_de_alunos.InputValidators;
-using Gerenciador_de_notas_de_alunos.Functions;
-using Gerenciador_de_notas_de_alunos.DATA;
+using Score_Manager.InputValidators;
+using Score_Manager.Functions;
+using Score_Manager.Data;
 
 
-namespace Gerenciador_de_notas_de_alunos
+namespace Score_Manager
 {
     public class ProgramMain     {
 
         public static void Main()
         {
             byte userInput = 0;
+            byte cicleInput = 0;
             bool LoopBreaker = true;
 
             PogramConfig.ConfigurationProgram();
@@ -18,13 +19,13 @@ namespace Gerenciador_de_notas_de_alunos
             do
             {
                 Console.WriteLine("Classroom Score manager:\n [1]Sign in student and score.\n [2]Classroom final score.\n" + 
-                                             " [3]All score\n [4]Search Student\n [5]Recofing Program\n [6]Quit");
-                userInput = ByteInputValidator.ByteInput("Select: ");
+                                             " [3]All score\n [4]Search Student\n [5]Recofing Program\n [6]Add scores");
+                userInput = ByteInputValidator.ByteInput("Select: ", 0, 7);
 
                 switch (userInput)
                 {
                     case 1:
-                        byte suserInput = ByteInputValidator.ByteInput("Write numbers of students to be regitered: ");
+                        byte suserInput = ByteInputValidator.ByteInput("Write numbers of students to be regitered: ", 0, 30);
                         StudentSignin.SignIn(suserInput);
                         if (suserInput >= 1)
                         {
@@ -50,11 +51,13 @@ namespace Gerenciador_de_notas_de_alunos
                         Console.WriteLine("Choose configuration for reset:\n [1]Reset course quantity and add more courses.\n" +
                                           " [2]Reset cicles quantity\n [3]Reset country\n");
 
-                        userInput = ByteInputValidator.ByteInput("Select:");
+                        userInput = ByteInputValidator.ByteInput("Select:", 0, 3);
                         ResetConfigProgram.resetConfig(userInput);
                         break;
                     case 6:
-                        LoopBreaker = false;
+                        cicleInput = ByteInputValidator.ByteInput("Write number of cicle: ", 0, ProgramData.cicleQuantity);
+
+                        AddNewScr.AddNeWScores(cicleInput);
                         break;
                     default:
                         Console.Write("This option don't exist.");
