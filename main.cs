@@ -2,6 +2,7 @@
 using Score_Manager.InputValidators;
 using Score_Manager.Functions;
 using Score_Manager.Data;
+using Gerenciador_de_notas_de_alunos.Functions;
 
 
 namespace Score_Manager
@@ -13,13 +14,14 @@ namespace Score_Manager
             byte userInput = 0;
             byte cicleInput = 0;
             bool LoopBreaker = true;
+            Console.ForegroundColor = ConsoleColor.Blue;
 
             PogramConfig.ConfigurationProgram();
 
             do
             {
-                Console.WriteLine("Classroom Score manager:\n [1]Sign in student and score.\n [2]Classroom final score.\n" + 
-                                             " [3]All score\n [4]Search Student\n [5]Recofing Program\n [6]Add scores");
+                Console.WriteLine("Classroom Score manager:\n [1]Sign in student and score.\n [2]Add score\n" + 
+                                             " [3]View all score\n [4]Search Student\n [5]Recofing Program\n [6]Progress the clcle");
                 userInput = ByteInputValidator.ByteInput("Select: ", 0, 7);
 
                 switch (userInput)
@@ -38,8 +40,7 @@ namespace Score_Manager
 
                         break;
                     case 2:
-                        Console.WriteLine($"The score of classroom is {ProgramData.StudentScoreSum:f2}, " +
-                            $"but the avarage final is: {ProgramData.StudentScoreSum / ProgramData.NumberStudent:f2}");
+                        AddNewScr.AddNeWScores();
                         break;
                     case 3:
                         ShowStudents.AllStudent();
@@ -51,9 +52,8 @@ namespace Score_Manager
                         ResetConfigProgram.resetConfig();
                         break;
                     case 6:
-                        cicleInput = ByteInputValidator.ByteInput("Write number of cicle: ", 0, ProgramData.cicleQuantity);
-
-                        AddNewScr.AddNeWScores(cicleInput);
+                        UpdateCicle.UpdCicle();
+                        Console.WriteLine("Cicle update.");
                         break;
                     default:
                         Console.Write("This option don't exist.");

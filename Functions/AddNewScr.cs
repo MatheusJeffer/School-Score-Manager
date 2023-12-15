@@ -10,7 +10,7 @@ namespace Score_Manager.Functions;
 public class AddNewScr : ProgramData
 {
 
-    public static void AddNeWScores(int cicle)
+    public static void AddNeWScores()
     {
 
         double scoreInput = 0;
@@ -22,23 +22,23 @@ public class AddNewScr : ProgramData
             for (int course = 0; course < quantityCourses; course++)
             {
 
-                if (allScores[student][course][cicle - 1] < maxScore) 
+                if (allScores[student][course][currentCicle] < maxScore) 
                 {
                     do
                     {
                         scoreInput = TypeCalculatorScr.TypeScr(country, course);
 
-                        if (allScores[student][course][cicle - 1] + scoreInput <= maxScore)
+                        if (allScores[student][course][currentCicle] + scoreInput <= maxScore)
                         {
 
-                            allScores[student][course][cicle - 1] += scoreInput;
+                            allScores[student][course][currentCicle] += scoreInput;
                             
-                            Console.WriteLine($" scores restant {maxScore - allScores[student][course][cicle - 1]:f2}");
+                            Console.WriteLine($" scores restant {maxScore - allScores[student][course][currentCicle]:f2}");
                             loopBreaker = false;
                         }
-                        else if (allScores[student][course][cicle - 1] + scoreInput > maxScore)
+                        else if (allScores[student][course][currentCicle] + scoreInput > maxScore)
                         {
-                            Console.WriteLine($"The score don't pass to {maxScore- allScores[student][course][cicle - 1]:f2}");
+                            Console.WriteLine($"The score don't pass to {maxScore- allScores[student][course][currentCicle]:f2}");
                         }
                     } while (loopBreaker);
                 }

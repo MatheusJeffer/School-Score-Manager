@@ -4,9 +4,17 @@ using Score_Manager.InputValidators;
 
 namespace Score_Manager.Functions
 {
+
+
+    /// <summary>
+    /// Classe <see cref="StudentSignin"/> - Descrição da classe asdadadadasdad.
+    /// </summary>
     public class StudentSignin : ProgramData
     {
-
+        /// <summary>
+        /// Método <see cref="SignIn"/> - Descrição do método.
+        /// </summary>
+        /// <param name="StudentQuantity">Qu
         public static void SignIn(int StudentQuantity)
         {
             for (int student = 0; student < StudentQuantity; student++)

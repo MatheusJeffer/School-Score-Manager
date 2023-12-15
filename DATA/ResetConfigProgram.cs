@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Score_Manager.InputValidators;
+using WinRT;
 
 namespace Score_Manager.Data
 {
+    /// <summary>
+    ///  A classe <see cref="ResetConfig"/> modifica as  configurações do programa de acordo com o desejo do usuario.
+    /// 
+    /// </summary>
     public class ResetConfigProgram : ProgramData
     {
-
         public static void resetConfig()
         {
             byte courseQuantity = 0;
@@ -41,6 +45,9 @@ namespace Score_Manager.Data
                 case 2:
                     cicleAll = ByteInputValidator.ByteInput("Write quantity f cicles: ", 0, 4);
                     cicleQuantity = cicleAll;
+                    allScores.Clear();
+                    StudentNameArray.Clear();
+                    NumberStudent = 0;
                     break;
                 case 3:
                     countryName = StringValidator.StringInputValidator("Write name of your country: ");
