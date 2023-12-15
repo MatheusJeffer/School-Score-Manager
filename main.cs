@@ -48,11 +48,7 @@ namespace Score_Manager
                         SearchStudent.Search();
                         break;
                     case 5:
-                        Console.WriteLine("Choose configuration for reset:\n [1]Reset course quantity and add more courses.\n" +
-                                          " [2]Reset cicles quantity\n [3]Reset country\n");
-
-                        userInput = ByteInputValidator.ByteInput("Select:", 0, 3);
-                        ResetConfigProgram.resetConfig(userInput);
+                        ResetConfigProgram.resetConfig();
                         break;
                     case 6:
                         cicleInput = ByteInputValidator.ByteInput("Write number of cicle: ", 0, ProgramData.cicleQuantity);

@@ -26,10 +26,21 @@ namespace Score_Manager.Functions
 
                 for (int student = 0; student < ProgramData.StudentNameArray.Count; student++)
                 {
-                    for (int course = 0; course < ProgramData.quantityCourses; course++)
+                    if (ProgramData.StudentNameArray[student] == studentName)
                     {
-                        Console.WriteLine($"  {ProgramData.courses[index].PadRight(10)} : [ {ProgramData.allScores[student][course][1]} ]");
+                        Console.WriteLine($"{ProgramData.StudentNameArray.IndexOf(studentName)}°." +
+                          $"{ProgramData.StudentNameArray[ProgramData.StudentNameArray.IndexOf(studentName)]}  ");
 
+                        for (int course = 0; course < ProgramData.quantityCourses; course++)
+                        {
+                            Console.Write($"  {ProgramData.courses[course].PadRight(10)}: ");
+                            for (int cicles = 0; cicles < ProgramData.cicleQuantity; cicles++)
+                            {
+                                Console.Write($" [ {ProgramData.allScores[student][course][cicles]:f2} ]");
+
+                            }
+                            Console.WriteLine("");
+                        }
                     }
                 } 
            

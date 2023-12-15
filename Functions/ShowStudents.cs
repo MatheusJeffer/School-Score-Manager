@@ -17,12 +17,13 @@ namespace Score_Manager.Functions
 
                 for (int course = 0; course < ProgramData.quantityCourses; course++)
                 {
+                    Console.Write($"  {ProgramData.courses[course].PadRight(10)}: ");
                     for (int cicle = 0; cicle < ProgramData.cicleQuantity; cicle++)
                     {
 
-                        Console.WriteLine($"  {ProgramData.courses[index]}: [ {ProgramData.allScores[student][course][cicle]:f2} ] ");
+                        Console.Write($" [ {ProgramData.allScores[student][course][cicle]:f2} ] ");
                     }
-                    index++;
+                    Console.WriteLine("");
                 }
 
             }
