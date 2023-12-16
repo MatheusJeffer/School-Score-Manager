@@ -19,7 +19,8 @@ namespace Score_Manager.Data
             byte courseQuantity = 0;
             byte cicleAll = 0;
             string countryName = " ";
-            byte userChoose = 0; 
+            byte userChoose = 0;
+            SettingsData saveSettings = new SettingsData();
 
             Console.WriteLine("Choose configuration for reset:\n [1]Reset course quantity and add more courses.\n" +
                                       " [2]Reset cicles quantity\n [3]Reset country\n");
@@ -63,7 +64,7 @@ namespace Score_Manager.Data
                     break;
             }
 
-
+            saveSettings.Save();
 
         }
     }

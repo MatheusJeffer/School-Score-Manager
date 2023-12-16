@@ -16,8 +16,8 @@ namespace Score_Manager.Data
     {
         public static List<List<List<double>>> allScores = new List<List<List<double>>> { };
         public static List<string> StudentNameArray = new List<string> { };
-        public static double StudentScoreSum = 0;
         public static int NumberStudent = 0;
+        public static int studantQuantity = 0;
         public static int currentCicle = 0;
         public static double maxScore = 0;
         public static int StudentRegister = 0;

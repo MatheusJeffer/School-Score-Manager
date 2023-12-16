@@ -3,6 +3,7 @@ using Score_Manager.InputValidators;
 using Score_Manager.Functions;
 using Score_Manager.Data;
 using Gerenciador_de_notas_de_alunos.Functions;
+using Gerenciador_de_notas_de_alunos.Data;
 
 
 namespace Score_Manager
@@ -14,9 +15,22 @@ namespace Score_Manager
             byte userInput = 0;
             byte cicleInput = 0;
             bool LoopBreaker = true;
+            const string path = @"C:\Users\Mathe_ss6lb0m\Documents\score manager data\settings.txt";
+            ReloadSaveSettings reload = new ReloadSaveSettings();
+            StudentDataRead studentDataRead = new StudentDataRead();
             Console.ForegroundColor = ConsoleColor.Blue;
 
-            PogramConfig.ConfigurationProgram();
+
+            if (!System.IO.File.Exists(path))
+            {
+                PogramConfig.ConfigurationProgram();
+            }
+            else
+            {
+                reload.ReadSave();
+                studentDataRead.ReadSave();
+            }
+
 
             do
             {

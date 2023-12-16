@@ -17,6 +17,8 @@ namespace Score_Manager.Functions
         /// <param name="StudentQuantity">Qu
         public static void SignIn(int StudentQuantity)
         {
+            SettingsData saveData = new SettingsData();
+
             for (int student = 0; student < StudentQuantity; student++)
             {
 
@@ -34,6 +36,8 @@ namespace Score_Manager.Functions
 
                 }
                 NumberStudent++;
+                studantQuantity = StudentNameArray.Count;
+                saveData.Save();
             }
         }
     }       

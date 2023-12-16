@@ -12,6 +12,7 @@ public class AddNewScr : ProgramData
 
     public static void AddNeWScores()
     {
+        StudentData saveDataList = new StudentData();
 
         double scoreInput = 0;
         bool loopBreaker = true;
@@ -48,7 +49,7 @@ public class AddNewScr : ProgramData
                 }
             }
         }
-
+        saveDataList.Save();
     }
 
 }

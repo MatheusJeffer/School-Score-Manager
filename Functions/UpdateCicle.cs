@@ -11,7 +11,10 @@ namespace Gerenciador_de_notas_de_alunos.Functions
     {
         public static void UpdCicle()
         {
+            SettingsData saveData = new SettingsData();
+
             currentCicle = (currentCicle < cicleQuantity) ? currentCicle += 1 : currentCicle;
+            saveData.Save();
         }
 
     }
