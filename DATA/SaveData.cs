@@ -27,7 +27,7 @@ namespace Score_Manager.Data
                 settingsSave.WriteLine(quantityCourses);
                 settingsSave.WriteLine(NumberStudent);
                 settingsSave.WriteLine(cicleQuantity);
-                settingsSave.WriteLine(maxScore);
+                settingsSave.WriteLine($"{maxScore:f2}");
                 settingsSave.WriteLine(currentCicle);
 
                 for (int index = 0; index < courses.Length; index++)
@@ -61,7 +61,7 @@ namespace Score_Manager.Data
                     {
                         foreach (double scores in allScores[student][course])
                         {
-                            listWreater.WriteLine(scores);
+                            listWreater.WriteLine($"{scores:f2}");
                         }
                     }
                 }

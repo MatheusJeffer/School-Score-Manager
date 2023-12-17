@@ -22,28 +22,29 @@ public class AddNewScr : ProgramData
             Console.WriteLine($"Student: {StudentNameArray[student]}");
             for (int course = 0; course < quantityCourses; course++)
             {
-
                 if (allScores[student][course][currentCicle] < maxScore) 
                 {
-                    do
+                    while (true)
                     {
+
+
                         scoreInput = TypeCalculatorScr.TypeScr(country, course);
 
                         if (allScores[student][course][currentCicle] + scoreInput <= maxScore)
                         {
 
                             allScores[student][course][currentCicle] += scoreInput;
-                            
+
                             Console.WriteLine($" scores restant {maxScore - allScores[student][course][currentCicle]:f2}");
-                            loopBreaker = false;
+                            break;
                         }
                         else if (allScores[student][course][currentCicle] + scoreInput > maxScore)
                         {
-                            Console.WriteLine($"The score don't pass to {maxScore- allScores[student][course][currentCicle]:f2}");
+                            Console.WriteLine($"The score don't pass to {maxScore - allScores[student][course][currentCicle]:f2}");
                         }
-                    } while (loopBreaker);
+                    }
                 }
-                else
+                else 
                 {
                     Console.WriteLine($"Score max limit in {courses[course]}");
                 }

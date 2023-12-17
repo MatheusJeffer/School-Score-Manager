@@ -24,7 +24,7 @@ namespace Gerenciador_de_notas_de_alunos.Data
                     NumberStudent = int.Parse(readSettings.ReadLine());
                     cicleQuantity = int.Parse(readSettings.ReadLine());
 
-                    maxScore = int.Parse(readSettings.ReadLine());
+                    maxScore = Convert.ToDouble(readSettings.ReadLine());
                     currentCicle = int.Parse(readSettings.ReadLine());
 
                     courses = new string[quantityCourses];
