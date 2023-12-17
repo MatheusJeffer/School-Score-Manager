@@ -14,11 +14,10 @@ namespace Gerenciador_de_notas_de_alunos.Data
         public virtual void ReadSave()
         {
 
-            const string path = @"C:\Users\Mathe_ss6lb0m\Documents\score manager data\settings.txt";
+            string path = $@"C:\Users\{Environment.UserName}\Documents\score manager data\settings.txt";
 
-
-                using (StreamReader readSettings = new StreamReader(path))
-                {
+            using (StreamReader readSettings = new StreamReader(path))
+            {
                     country = readSettings.ReadLine();
                     quantityCourses = int.Parse(readSettings.ReadLine());
                     
@@ -35,27 +34,23 @@ namespace Gerenciador_de_notas_de_alunos.Data
                             courses[course] = readSettings.ReadLine();
                     }
                     
-                }
-
-
+            }
         }
-
-
-
     }
 
     public class StudentDataRead : ReloadSaveSettings
     {
         public override void ReadSave()
         {
-            const string path = @"C:\Users\Mathe_ss6lb0m\Documents\score manager data\StudentData.txt";
+            string path = $@"C:\Users\{Environment.UserName}\Documents\score manager data\StudentData.txt";
 
-            
+
 
             using (StreamReader readerStudentData = new StreamReader(path))
             {
                 for(int student = 0; student < NumberStudent; student++)
                 {
+
                     StudentNameArray.Add(readerStudentData.ReadLine());
                     allScores.Add(new List<List<Double>> { });
                     for (int course = 0; course  < quantityCourses; course++)
@@ -66,12 +61,8 @@ namespace Gerenciador_de_notas_de_alunos.Data
                             allScores[student][course].Add(Convert.ToDouble(readerStudentData.ReadLine()));
                         }
                     }
-
                 }
             }
-
-
         }
-
     }
 }

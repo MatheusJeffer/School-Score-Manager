@@ -36,7 +36,6 @@ namespace Score_Manager.Functions
 
                 }
                 NumberStudent++;
-                studantQuantity = StudentNameArray.Count;
                 saveData.Save();
             }
         }

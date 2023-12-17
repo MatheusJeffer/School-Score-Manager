@@ -13,7 +13,7 @@ namespace Gerenciador_de_notas_de_alunos.Functions
         {
             SettingsData saveData = new SettingsData();
 
-            currentCicle = (currentCicle < cicleQuantity) ? currentCicle += 1 : currentCicle;
+            currentCicle = (cicleQuantity > currentCicle) ? currentCicle++ : currentCicle;
             saveData.Save();
         }
 

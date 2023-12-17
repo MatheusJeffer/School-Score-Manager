@@ -12,10 +12,10 @@ namespace Score_Manager.Data
         public virtual void Save()
         {
 
-
-            const string path = @"C:\Users\Mathe_ss6lb0m\Documents\score manager data\settings.txt";
+            string path = $@"C:\Users\{Environment.UserName}\Documents\score manager data\settings.txt";
             if (!System.IO.File.Exists(path))
             {
+                
                 FileStream createFile =  System.IO.File.Create(path);
                 createFile.Close();
             }
@@ -44,11 +44,10 @@ namespace Score_Manager.Data
     {
         public override void Save()
         {
-            const string path = @"C:\Users\Mathe_ss6lb0m\Documents\score manager data\StudentData.txt";
-
-            if (!System.IO.File.Exists(path))
+            string path = $@"C:\Users\{Environment.UserName}\Documents\score manager data\StudentData.txt";
+            if (!File.Exists(path))
             {
-                FileStream createFile = System.IO.File.Create(path);
+                FileStream createFile = File.Create(path);
                 createFile.Close();
             }
 
