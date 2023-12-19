@@ -18,12 +18,11 @@ namespace Score_Manager.Functions
         public static void SignIn(int StudentQuantity)
         {
             SettingsData saveData = new SettingsData();
-
             for (int student = 0; student < StudentQuantity; student++)
             {
 
-                allScores.Add(new List<List<double>> { });
                 StudentNameArray.Add(StringValidator.StringInputValidator("Write the name of student: "));
+                allScores.Add(new List<List<double>> { });
 
                 for (int course = 0; course < quantityCourses; course++)
                 {

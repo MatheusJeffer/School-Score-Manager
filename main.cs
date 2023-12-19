@@ -28,20 +28,16 @@ namespace Score_Manager
             if (!Directory.Exists(pathPaste))
             {
                 Directory.CreateDirectory(pathPaste);
-            }
-            if (!System.IO.File.Exists(path))
-            {
+                File.Create(path);
+                File.Create(path1);
                 PogramConfig.ConfigurationProgram();
             }
-            if (File.Exists(path))
+            else
             {
                 reload.ReadSave();
-
-            }
-            if (File.Exists(path1))
-            {
                 studentDataRead.ReadSave();
             }
+
 
 
 
